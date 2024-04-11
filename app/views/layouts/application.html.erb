@@ -27,7 +27,11 @@
         </li>
       </ul>
     </nav>
-    <main>  
+    <main>
+      <% flash.each do |message_type, message| %>
+      <div class="flash-message <%= message_type %>"><%= message %></div>
+    <% end %>
+     <div class="flash-message notice">投稿に成功しました。</div>
     <%= yield %>
     </main>
   </body>
